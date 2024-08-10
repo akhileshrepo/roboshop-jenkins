@@ -25,9 +25,6 @@ def call() {
                 }
             }
             stage('Code Security') {
-                when {
-
-                }
                 steps {
                     echo 'Hello World'
                 }
