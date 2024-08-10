@@ -10,16 +10,20 @@ def call() {
                 }
             }
             stage('Test') {
-                steps {
-                    echo 'Hello World'
+                when {
+                    expression { env.BRANCH_NAME ==~ ".*" }
                 }
-            }
-            stage('Build') {
                 steps {
                     echo 'Hello World'
                 }
             }
             stage('Code Quality') {
+                when {
+                    allOf{
+                        expression { env.BRANCH_NAME != null }
+                        expression { env.TAG_NAME == null }
+                    }
+                }
                 steps {
                     echo 'Hello World'
                 }
