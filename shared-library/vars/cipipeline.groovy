@@ -6,7 +6,7 @@ def call() {
         git branch: 'main', url: "https://github.com/akhileshrepo/${component}"
 
         stage('Compile Code') {
-            print 'Hello'
+           common.compile()
         }
         stage('Test') {
             print 'Hello'
