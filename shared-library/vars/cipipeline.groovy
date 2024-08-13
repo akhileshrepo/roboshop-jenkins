@@ -13,20 +13,20 @@ def call() {
                 userRemoteConfigs: [[url: "https://github.com/raghudevopsb74/${component}"]]
         )
 
-        stage('Compile Code') {
-           common.compile()
-        }
-        stage('Test') {
-            print 'Hello'
-        }
-        stage('Code Quality') {
-            print 'Hello'
-        }
-        stage('Code Security') {
-            print 'Hello'
-        }
-        stage('Release') {
-            print 'Hello'
+        if(env.TAG_NAME ==~ ".*") {
+            common.compile()
+            common.release()
+        } else {
+            if(env.BRANCH_NAME == "main") {
+                common.compile()
+                common.test()
+                common.codeQuality()
+                common.codeSecurity()
+            } else {
+                common.compile()
+                common.test()
+                common.codeQuality()
+            }
         }
     }
 }
