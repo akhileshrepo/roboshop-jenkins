@@ -39,10 +39,10 @@ def codeQuality() {
         env.sonarpass = sh (script: 'aws ssm get-parameter --name "sonarqube.pass" --with-decryption --query="Parameter.Value" |xargs', returnStdout: true).trim()
         wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: sonarpass]]]) {
             if(env.codeType == "maven") {
-                sh 'sonar-scanner -Dsonar.host.url=http://172.31.0.205:9000 -Dsonar.login=${sonaruser} -Dsonar.password=${sonarpass} -Dsonar.projectKey=${component}'
+                sh 'sonar-scanner -Dsonar.host.url=http://172.31.0.205:9000 -Dsonar.login=${sonaruser} -Dsonar.password=${sonarpass} -Dsonar.projectKey=${component} -Dsonar.qualitygate.wait=true -Dsonar.java.binaries=./target'
                 //print 'OK'
             }else {
-                sh 'sonar-scanner -Dsonar.host.url=http://172.31.0.205:9000 -Dsonar.login=${sonaruser} -Dsonar.password=${sonarpass} -Dsonar.projectKey=${component}'
+                sh 'sonar-scanner -Dsonar.host.url=http://172.31.0.205:9000 -Dsonar.login=${sonaruser} -Dsonar.password=${sonarpass} -Dsonar.projectKey=${component} -Dsonar.qualitygate.wait=true'
                 //print 'OK'
             }
         }
