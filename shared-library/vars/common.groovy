@@ -15,7 +15,15 @@ def compile() {
 
 def test() {
     stage('Test Cases') {
-        print 'Test'
+        if (env.codeType == "maven") {
+            sh '/home/centos/maven/bin/mvn test'
+        }
+        if (env.codeType == "nodejs") {
+            sh 'npm test'
+        }
+        if (env.codeType == "python") {
+            sh 'python -m unittest'
+        }
     }
 }
 
