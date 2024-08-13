@@ -32,3 +32,9 @@ def codeSecurity() {
         print 'Code Security'
     }
 }
+
+def release() {
+    stage('Release') {
+        print 'Release'
+    }
+}
