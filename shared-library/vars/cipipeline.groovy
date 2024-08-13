@@ -10,7 +10,7 @@ def call() {
         }
         checkout scmGit(
                 branches: [[name: branch_name]],
-                userRemoteConfigs: [[url: "https://github.com/raghudevopsb74/${component}"]]
+                userRemoteConfigs: [[url: "https://github.com/akhileshrepo/${component}"]]
         )
 
         if(env.TAG_NAME ==~ ".*") {
@@ -28,5 +28,7 @@ def call() {
                 common.codeQuality()
             }
         }
+
     }
+
 }
