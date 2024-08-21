@@ -68,7 +68,7 @@ def release() {
         sh 'zip -r ${component}-${TAG_NAME}.zip server.js node_modules'
       }
 
-      sh 'curl -v -u ${nexususer}:${nexuspass} --upload-file ${component}-${TAG_NAME}.zip http://54.210.231.176:8081/repository/${component}/${component}-${TAG_NAME}.zip'
+      sh 'curl -v -u ${nexususer}:${nexuspass} --upload-file ${component}-${TAG_NAME}.zip http://172.31.20.92:8081/repository/${component}/${component}-${TAG_NAME}.zip'
     }
   }
 }
