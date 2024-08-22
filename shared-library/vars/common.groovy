@@ -66,9 +66,9 @@ def release() {
     wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: nexuspass]]]) {
       sh 'echo ${TAG_NAME} >VERSION'
       if(env.codeType == "nodejs") {
-          sh 'zip -r ${component}-${TAG_NAME}.zip server.js node_modules VERSION ${schemadir}'
+        sh 'zip -r ${component}-${TAG_NAME}.zip server.js node_modules VERSION ${schemadir}'
       } else if(env.codeType == "maven") {
-          sh 'cp target/${component}-1.0.jar ${component}.jar; zip -r ${component}-${TAG_NAME}.zip ${component}.jar VERSION ${schemadir}'
+        sh 'cp target/${component}-1.0.jar ${component}.jar; zip -r ${component}-${TAG_NAME}.zip ${component}.jar VERSION ${schemadir}'
       } else {
         sh 'zip -r ${component}-${TAG_NAME}.zip *'
       }
