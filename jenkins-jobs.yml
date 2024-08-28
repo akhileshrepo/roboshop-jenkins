@@ -6,6 +6,7 @@
     folders:
       - { folder_name: "CI-Pipelines" }
       - { folder_name: "Infra-Jobs" }
+      - { folder_name: "Deployment-Jobs" }
     mjobs:
       - { job_name: "cart", repo_name: "https://github.com/akhileshrepo/cart", folder_name: "CI-Pipelines" }
       - { job_name: "catalogue", repo_name: "https://github.com/akhileshrepo/catalogue", folder_name: "CI-Pipelines" }
@@ -15,3 +16,4 @@
       - { job_name: "frontend", repo_name: "https://github.com/akhileshrepo/frontend", folder_name: "CI-Pipelines" }
     sjobs:
       - { job_name: "roboshop-terraform", repo_name: "https://github.com/akhileshrepo/roboshop-terraform", folder_name: "Infra-Jobs" }
+      - { job_name: "App-Deployment", repo_name: "https://github.com/akhileshrepo/roboshop-ansible", folder_name: "Deployment-Jobs" }
