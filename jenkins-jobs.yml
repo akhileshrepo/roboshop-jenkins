@@ -14,6 +14,8 @@
       - { job_name: "shipping", repo_name: "https://github.com/akhileshrepo/shipping", folder_name: "CI-Pipelines" }
       - { job_name: "payment", repo_name: "https://github.com/akhileshrepo/payment", folder_name: "CI-Pipelines" }
       - { job_name: "frontend", repo_name: "https://github.com/akhileshrepo/frontend", folder_name: "CI-Pipelines" }
+      - { job_name: "roboshop-aws-ps-init-cont", repo_name: "https://github.com/akhileshrepo/roboshop-aws-ps-init-cont", folder_name: "CI-Pipelines" }
+      - { job_name: "roboshop-schema-init-cont", repo_name: "https://github.com/akhileshrepo/roboshop-schema-init-cont", folder_name: "CI-Pipelines" }
     sjobs:
       - { job_name: "roboshop-terraform", repo_name: "https://github.com/akhileshrepo/roboshop-terraform", folder_name: "Infra-Jobs" }
       - { job_name: "App-Deployment", repo_name: "https://github.com/akhileshrepo/roboshop-ansible", folder_name: "Deployment-Jobs" }
